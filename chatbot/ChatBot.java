@@ -12,13 +12,13 @@ public class ChatBot extends JFrame {
     private JPanel buttonsPanel;*/
 
     public ChatBot() {
-        // создание окна
+        // СЃРѕР·РґР°РЅРёРµ РѕРєРЅР°
         super("Chat Bot");
         setBounds(100, 100, 500, 500);
         
-        // заполнение окна
-        JLabel dialogLabel = new JLabel("Представьтесь, пожалуйста.", SwingConstants.CENTER);
-        JButton enterText = new JButton("Ввод");
+        // Р·Р°РїРѕР»РЅРµРЅРёРµ РѕРєРЅР°
+        JLabel dialogLabel = new JLabel("РџСЂРµРґСЃС‚Р°РІСЊС‚РµСЃСЊ, РїРѕР¶Р°Р»СѓР№СЃС‚Р°.", SwingConstants.CENTER);
+        JButton enterText = new JButton("Р’РІРѕРґ");
         JPanel buttonsPanel = new JPanel(new FlowLayout());
         JTextField answer = new JTextField(10);
         answer.setText(null);
@@ -27,7 +27,7 @@ public class ChatBot extends JFrame {
         add(dialogLabel, BorderLayout.CENTER);
         add(buttonsPanel, BorderLayout.SOUTH);
         
-        // обработка нажатия на кнопку
+        // РѕР±СЂР°Р±РѕС‚РєР° РЅР°Р¶Р°С‚РёСЏ РЅР° РєРЅРѕРїРєСѓ
         enterText.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 String answerStr = answer.getText();

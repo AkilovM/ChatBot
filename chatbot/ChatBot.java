@@ -6,11 +6,6 @@ import javax.swing.*;
 
 public class ChatBot extends JFrame {
 
-    /*private JTextField answer;
-    private JLabel dialogLabel;
-    private JButton enterText;
-    private JPanel buttonsPanel;*/
-
     public ChatBot() {
         // создание окна
         super("Chat Bot");
@@ -32,7 +27,7 @@ public class ChatBot extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String answerStr = answer.getText();
                 answer.setText(null);
-                String logicAnswer = Logic.summer(answerStr);
+                String logicAnswer = Logic.getResponse(answerStr);
                 if(logicAnswer != null)
                 	dialogLabel.setText(logicAnswer);
             }

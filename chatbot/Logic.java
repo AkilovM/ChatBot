@@ -3,16 +3,16 @@ package chatbot;
 public class Logic {
 
 	private static int questionNumber = 0;
-    private static int rightAnswers = 0;
+    	private static int rightAnswers = 0;
 	//private static Constants constants;
 	private static String username;
-	private static Boolean haveUsername = false; // Получено ли имя пользователя?
-	private static Boolean playingState = false; // Проходит викторину или нет.
+	private static Boolean haveUsername = false; // РџРѕР»СѓС‡РµРЅРѕ Р»Рё РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ?
+	private static Boolean playingState = false; // РџСЂРѕС…РѕРґРёС‚ РІРёРєС‚РѕСЂРёРЅСѓ РёР»Рё РЅРµС‚.
 	
 	public static String summer(String answerStr) {
 		if(answerStr.length() != 0) {
 			if(haveUsername) {
-				if(answerStr.toLowerCase().equals("помощь")) {
+				if(answerStr.toLowerCase().equals("РїРѕРјРѕС‰СЊ")) {
 					playingState = false;
 					return(Constants.greeting);
 				}
@@ -22,12 +22,12 @@ public class Logic {
 					questionNumber++;
 					if(Constants.questionsCount == questionNumber) {
 						playingState = false;
-						return("<html><p align=\"center\">Игра окончена.</p><br><p align=\"center\">" + username 
-								+ ", вы ответили правильно на " + rightAnswers + " из " + Constants.questionsCount + " вопросов.</p></html>");
+						return("<html><p align=\"center\">РРіСЂР° РѕРєРѕРЅС‡РµРЅР°.</p><br><p align=\"center\">" + username 
+								+ ", РІС‹ РѕС‚РІРµС‚РёР»Рё РїСЂР°РІРёР»СЊРЅРѕ РЅР° " + rightAnswers + " РёР· " + Constants.questionsCount + " РІРѕРїСЂРѕСЃРѕРІ.</p></html>");
 					}
 					return(Constants.questions[questionNumber]);
 				}
-				else if(answerStr.toLowerCase().equals("играть"))
+				else if(answerStr.toLowerCase().equals("ГЁГЈГ°Г ГІГј"))
 				{
 					playingState = true;
 					questionNumber = 0;
@@ -35,10 +35,10 @@ public class Logic {
 					return(Constants.questions[questionNumber]);
 				}
 			}
-			else {// получаем имя пользователя
+			else {// РїРѕР»СѓС‡Р°РµРј РёРјСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
 				username = answerStr;
 				haveUsername = true;
-				return("<html><p align=\"center\">Привет, " + username + "!</p><br>" + Constants.greeting + "</html>");
+				return("<html><p align=\"center\">РџСЂРёРІРµС‚, " + username + "!</p><br>" + Constants.greeting + "</html>");
 			}
 		}
 		return null;
